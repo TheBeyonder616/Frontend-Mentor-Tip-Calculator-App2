@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A simple tip calculator app that helps you calculate tip amounts and totals based on the bill and number of people."
+    />
+    <meta
+      name="keywords"
+      content="tip calculator, finance, calculator, frontend mentor"
+    />
+    <meta name="author" content="Peter Godspower" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="hsl(185, 41%, 84%)" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+
+    <script src="./script.js" defer></script>
+
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="heading-primary">spli <span>tter</span></h1>
+    </header>
+
+    <main id="main" class="main">
+      <article class="tip-calculator">
+        <!--!================================[Form]  -->
+        <form class="form" data-input="form">
+          <!--?-------[Bill]  -->
+          <section class="form-section form--bill" data-display="validation">
+            <div class="from-wrapper bill--wrapper">
+              <h2 class="heading-secondary">Bill</h2>
+              <span
+                class="error-message"
+                data-display="error"
+                aria-live="assertive"
+              >
+              </span>
+            </div>
+
+            <label for="bill" class="form-label">
+              <div class="svg svg--icon">
+                <svg aria-label="Icon dollar">
+                  <use href="./images/icon.svg#dollar"></use>
+                </svg>
+              </div>
+              <input
+                id="bill"
+                type="number"
+                class="form-input"
+                data-input="bill"
+              />
+            </label>
+          </section>
+
+          <!--?----------[Percentage]  -->
+          <section
+            class="form-section form--percentage"
+            data-display="validation"
+          >
+            <div class="from-wrapper percentage--wrapper">
+              <h2 class="heading-secondary">Select tip %</h2>
+              <!-- Error -->
+              <span
+                class="error-message"
+                data-display="error"
+                aria-live="assertive"
+              >
+              </span>
+            </div>
+            <!--!Grid -->
+            <div class="form__percentage-grid">
+              <label class="btn">
+                <input
+                  type="radio"
+                  value="5%"
+                  name="percentage"
+                  data-input="percentage"
+                />
+                5%
+              </label>
+
+              <label class="btn">
+                <input
+                  type="radio"
+                  value="10%"
+                  name="percentage"
+                  data-input="percentage"
+                />
+                10%
+              </label>
+
+              <label class="btn">
+                <input
+                  type="radio"
+                  value="15%"
+                  name="percentage"
+                  data-input="percentage"
+                />
+                15%
+              </label>
+
+              <label class="btn">
+                <input
+                  type="radio"
+                  value="25%"
+                  name="percentage"
+                  data-input="percentage"
+                />
+                25%
+              </label>
+
+              <label class="btn">
+                <input
+                  type="radio"
+                  value="50%"
+                  name="percentage"
+                  data-input="percentage"
+                />
+                50%
+              </label>
+              <!-- [custom] -->
+              <label class="custom--label" for="percentage-custom">
+                <input
+                  id="percentage-custom"
+                  type="number"
+                  placeholder="Custom"
+                  data-input="percentage-custom"
+                />
+              </label>
+            </div>
+          </section>
+
+          <!--?-----------[Label]  -->
+          <section class="form-section form--count" data-display="validation">
+            <div class="from-wrapper count--wrapper">
+              <h2 class="heading-secondary">Number of People</h2>
+              <!-- [error] -->
+              <span
+                class="error-message"
+                data-display="error"
+                aria-live="assertive"
+              >
+              </span>
+            </div>
+            <label for="people" class="form-label">
+              <div class="svg svg--icon">
+                <svg aria-label="Icon dollar">
+                  <use href="./images/icon.svg#person"></use>
+                </svg>
+              </div>
+              <input
+                id="people"
+                type="number"
+                class="form-input"
+                data-input="people"
+              />
+            </label>
+          </section>
+        </form>
+        <!--!================================[Result]  -->
+        <section class="result">
+          <div class="result__output">
+            <section class="display-result">
+              <!-- ?[Amount] -->
+              <div class="display-result__result result--amount">
+                <h3 class="heading-third">Tip Amount <span>/ person</span></h3>
+                <span class="heading-display" data-display="tip">$0.00</span>
+              </div>
+              <!-- ?[TOtal] -->
+              <div class="display-result__result rest--total">
+                <h3 class="heading-third">Total <span>/ person</span></h3>
+                <span class="heading-display" data-display="total">$0.00</span>
+              </div>
+            </section>
+            <!-- ?[button] -->
+            <div class="rest">
+              <button class="rest__btn" type="button" data-reset>Reset</button>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Peter Godspower</a>.
+    </footer>
+  </body>
+</html>
